@@ -1,10 +1,10 @@
 import React from 'react';
-import { FlaskConical, Github } from 'lucide-react';
+import { FlaskConical } from 'lucide-react';
 
 export function Footer() {
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--surface)] py-6 px-4 md:px-6 transition-colors duration-200">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
         {/* Left: Branding & Tagline */}
         <div className="flex items-center gap-2 text-[var(--text-muted)]">
           <FlaskConical size={14} className="text-[var(--accent)] shrink-0" />
@@ -13,29 +13,14 @@ export function Footer() {
           <span className="hidden sm:inline font-mono tabular-nums">AKTU B.Tech Practicals</span>
         </div>
 
-        {/* Center / Right: Clean attribution alongside GitHub repository link */}
-        <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 text-xs">
-          <div className="flex items-center gap-1.5">
-            <span className="font-medium text-[var(--text)] tracking-tight">
-              Built by Neelesh
-            </span>
-            <span className="text-[var(--text-muted)] font-normal italic">
-              — visualize the labs you missed.
-            </span>
-          </div>
-
-          <span className="hidden sm:inline text-[var(--border)]">•</span>
-
-          <a
-            href="https://github.com/neeleshkumar-debug/Engineering-Physics-Virtual-Lab"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 font-medium text-[var(--text-muted)] hover:text-[var(--text)] transition-colors group"
-            title="View Engineering Physics Virtual Lab on GitHub"
-          >
-            <Github size={13} className="shrink-0 group-hover:text-[var(--text)]" />
-            <span className="underline underline-offset-2">GitHub</span>
-          </a>
+        {/* Center / Right: Clean attribution */}
+        <div className="flex flex-wrap items-center justify-center sm:justify-end gap-1.5 text-xs">
+          <span className="font-medium text-[var(--text)] tracking-tight">
+            Built by Neelesh
+          </span>
+          <span className="text-[var(--text-muted)] font-normal italic">
+            — visualize the labs you missed.
+          </span>
         </div>
       </div>
     </footer>
