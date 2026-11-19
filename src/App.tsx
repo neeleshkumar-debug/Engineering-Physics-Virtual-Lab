@@ -10,6 +10,7 @@ import { HallEffectLab } from './labs/sem1/hall-effect';
 import { DiffractionGratingLab } from './labs/sem1/diffraction-grating';
 import { CareyFosterLab } from './labs/sem1/carey-foster';
 import { NewtonsRingsLab } from './labs/sem1/newtons-rings';
+import { PolarimeterLab } from './labs/sem1/polarimeter';
 import { getLabBySlug } from './data/labsRegistry';
 
 // ─── Lab route: dispatches to the correct experiment component ─────────────────
@@ -27,6 +28,7 @@ function LabRoute() {
   if (slug === 'diffraction-grating') return <DiffractionGratingLab />;
   if (slug === 'carey-foster' || slug === 'carey-foster-bridge') return <CareyFosterLab />;
   if (slug === 'newtons-rings') return <NewtonsRingsLab />;
+  if (slug === 'polarimeter' || slug === 'half-shade-polarimeter') return <PolarimeterLab />;
 
   // All other experiments are coming-soon
   return <ComingSoonPage slug={slug} />;

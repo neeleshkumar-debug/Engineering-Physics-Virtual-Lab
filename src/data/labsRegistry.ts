@@ -134,6 +134,27 @@ export const labsRegistry: LabMeta[] = [
       '1.5V DC Power Source with Plug Key',
     ],
   },
+  {
+    slug: 'polarimeter',
+    title: 'Specific Rotation of Sugar Solution (Polarimeter)',
+    shortDesc:
+      "Determine the specific rotation (S ≈ +66.5°) of cane sugar in aqueous solution and estimate unknown concentration using Laurent's half-shade polarimeter and sodium D-line light.",
+    year: 1,
+    semester: 1,
+    category: 'Optics',
+    difficulty: 'Intermediate',
+    status: 'live',
+    icon: 'RotateCw',
+    estimatedTime: '45 min',
+    apparatus: [
+      "Laurent's Half-Shade Polarimeter with Circular Vernier (0.05° LC)",
+      'Sodium Vapor Discharge Lamp (λ = 589.3 nm)',
+      'Hollow Glass Polarimeter Tube (L = 10 cm, 20 cm, 22 cm)',
+      'Analytical Digital Chemical Balance',
+      'Volumetric Measuring Flasks (100 mL)',
+      'Pure Cane Sugar (Commercial Sucrose) & Distilled Water',
+    ],
+  },
 ];
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -143,7 +164,8 @@ export function getLabBySlug(slug: string): LabMeta | undefined {
     (lab) =>
       lab.slug === slug ||
       (slug === 'carey-foster-bridge' && lab.slug === 'carey-foster') ||
-      (slug === 'carey-foster' && lab.slug === 'carey-foster-bridge')
+      (slug === 'carey-foster' && lab.slug === 'carey-foster-bridge') ||
+      (slug === 'half-shade-polarimeter' && lab.slug === 'polarimeter')
   );
 }
 

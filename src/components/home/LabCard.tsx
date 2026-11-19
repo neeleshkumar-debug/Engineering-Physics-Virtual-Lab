@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import { Clock, ArrowRight } from 'lucide-react';
 import {
   Flame, CircleDot, Layers, Magnet, GitBranch,
-  FlaskConical, Cpu, Zap,
+  FlaskConical, Cpu, Zap, RotateCw,
 } from 'lucide-react';
 import { StatusBadge, CategoryBadge, DifficultyBadge } from '../ui/Badge';
 import type { LabMeta } from '../../types/lab';
 
 // Icon map — add new icons here as experiments expand
 const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Flame, CircleDot, Layers, Magnet, GitBranch, FlaskConical, Cpu, Zap,
+  Flame, CircleDot, Layers, Magnet, GitBranch, FlaskConical, Cpu, Zap, RotateCw,
 };
 
 interface LabCardProps {

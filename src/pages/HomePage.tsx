@@ -1,6 +1,6 @@
 // ─── Home Page ─────────────────────────────────────────────────────────────────
 import React, { useState } from 'react';
-import { Search, Beaker, GraduationCap, BookOpen, Zap } from 'lucide-react';
+import { Search, Beaker, GraduationCap, BookOpen } from 'lucide-react';
 import { Sidebar } from '../components/layout/Sidebar';
 import { LabGrid } from '../components/home/LabGrid';
 import type { FilterState } from '../components/layout/Sidebar';
@@ -17,7 +17,6 @@ export function HomePage() {
   const [filters, setFilters] = useState<FilterState>(DEFAULT_FILTERS);
   const [search, setSearch] = useState('');
 
-  const liveCount = labsRegistry.filter((l) => l.status === 'live').length;
   const totalCount = labsRegistry.length;
 
   return (
@@ -33,11 +32,6 @@ export function HomePage() {
           }}
         />
         <div className="relative max-w-5xl mx-auto px-4 md:px-6 py-14 md:py-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-xs font-medium text-[var(--accent)] mb-6">
-            <Zap size={12} />
-            {liveCount} of {totalCount} experiments live
-          </div>
-
           <h1 className="text-3xl md:text-5xl font-bold text-[var(--text)] mb-4 leading-tight">
             Engineering Physics<br />
             <span className="text-[var(--accent)]">Virtual Lab</span>

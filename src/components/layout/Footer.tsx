@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlaskConical } from 'lucide-react';
+import { FlaskConical, Github } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -13,14 +13,25 @@ export function Footer() {
           <span className="hidden sm:inline font-mono tabular-nums">AKTU B.Tech Practicals</span>
         </div>
 
-        {/* Center / Right: Clean attribution */}
-        <div className="flex flex-wrap items-center justify-center sm:justify-end gap-1.5 text-xs">
+        {/* Center / Right: Clean attribution + GitHub */}
+        <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 text-xs">
           <span className="font-medium text-[var(--text)] tracking-tight">
             Built by Neelesh
           </span>
           <span className="text-[var(--text-muted)] font-normal italic">
             — visualize the labs you missed.
           </span>
+          <span className="text-[var(--border)]">•</span>
+          <a
+            href="https://github.com/neeleshkumar-debug/Engineering-Physics-Virtual-Lab"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+            title="View Engineering Physics Virtual Lab on GitHub"
+          >
+            <Github size={13} />
+            <span>GitHub</span>
+          </a>
         </div>
       </div>
     </footer>
