@@ -36,11 +36,11 @@ export function Navbar() {
       <div className="ml-auto flex items-center gap-2">
         {/* GitHub link */}
         <a
-          href="https://github.com"
+          href="https://github.com/neeleshkumar-debug/Engineering-Physics-Virtual-Lab"
           target="_blank"
           rel="noopener noreferrer"
           className="p-2 rounded-lg text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--border)] transition-colors"
-          title="View on GitHub"
+          title="View Engineering Physics Virtual Lab on GitHub"
         >
           <Github size={18} />
         </a>

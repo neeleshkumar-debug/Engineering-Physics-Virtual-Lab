@@ -79,12 +79,6 @@ export function HomePage() {
               "
             />
           </div>
-
-          {/* Subtle author note */}
-          <div className="mt-4 flex items-center gap-1.5 text-xs text-[var(--text-muted)]">
-            <span className="font-medium text-[var(--text)]">Built by Neelesh</span>
-            <span className="italic">— visualize the labs you missed.</span>
-          </div>
         </div>
       </section>
 
