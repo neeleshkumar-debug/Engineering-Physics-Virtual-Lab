@@ -1,5 +1,6 @@
 import React from 'react'; // eslint-disable-line @typescript-eslint/no-unused-vars
 import { HashRouter, Routes, Route, useParams } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
@@ -44,6 +45,7 @@ export default function App() {
         </div>
         <Footer />
       </div>
+      <Analytics />
     </HashRouter>
   );
 }
