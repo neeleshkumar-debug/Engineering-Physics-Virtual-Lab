@@ -1,0 +1,1 @@
+export { DiffractionGratingLab } from './DiffractionGratingLab';

@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* ─── Design token definitions ─────────────────────────────────────────────── */
+:root {
+  /* Light mode (default fallback) */
+  --bg:           #f4f6fa;
+  --surface:      #ffffff;
+  --border:       #e2e8f0;
+  --accent:       #1d4ed8;
+  --text:         #0f172a;
+  --text-muted:   #64748b;
+  --correct:      #16a34a;
+  --wrong:        #dc2626;
+}
+
+/* Dark mode — activated by .dark on <html> */
+.dark {
+  --bg:           #0f1117;
+  --surface:      #1a1f2e;
+  --border:       #2d3450;
+  --accent:       #4f9cf9;
+  --text:         #e2e8f0;
+  --text-muted:   #8892a4;
+  --correct:      #22c55e;
+  --wrong:        #ef4444;
+}
+
+/* ─── Base resets ───────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* ─── Scrollbar styling ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── Utility: line-clamp fallback ─────────────────────────────────────────── */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── Canvas cursor ─────────────────────────────────────────────────────────── */
+canvas { display: block; }
+
+/* ─── Observation table cell states ────────────────────────────────────────── */
+.cell-correct {
+  background-color: color-mix(in srgb, var(--correct) 12%, transparent);
+  border-color: var(--correct) !important;
+  color: var(--correct);
+}
+
+.cell-wrong {
+  background-color: color-mix(in srgb, var(--wrong) 12%, transparent);
+  border-color: var(--wrong) !important;
+  color: var(--wrong);
+}
+
+/* ─── Accordion animation ───────────────────────────────────────────────────── */
+@keyframes accordion-down {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.accordion-enter { animation: accordion-down 0.15s ease; }
