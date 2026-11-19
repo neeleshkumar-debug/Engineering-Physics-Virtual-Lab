@@ -111,22 +111,26 @@ export const labsRegistry: LabMeta[] = [
     ],
   },
   {
-    slug: 'carey-foster-bridge',
+    slug: 'carey-foster',
     title: "Carey Foster's Bridge",
     shortDesc:
-      'Determine a low resistance and the resistance per unit length of a bridge wire using the Carey Foster bridge method.',
+      'Determine the resistance per unit length of a bridge wire, and find the unknown resistance and specific resistance (resistivity) of a given wire material by eliminating end-corrections.',
     year: 1,
     semester: 1,
     category: 'Electricity',
-    difficulty: 'Beginner',
-    status: 'coming-soon',
+    difficulty: 'Intermediate',
+    status: 'live',
     icon: 'GitBranch',
-    estimatedTime: '35 min',
+    estimatedTime: '45 min',
     apparatus: [
-      'Carey Foster Bridge',
-      'Galvanometer',
-      'Battery Eliminator',
-      'Standard Resistance Box',
+      'Carey Foster Bridge Board (100 cm Wire, 4 Gaps)',
+      'Fractional Resistance Box (0.1–1.0 Ω)',
+      'Thick Copper Strip (0.00 Ω)',
+      'Equal Ratio Coils (P = Q = 2.0 Ω)',
+      'Moving-Coil Galvanometer with Shunt Key',
+      'Unknown Specimen Resistance Wires (Constantan, Nichrome, Manganin)',
+      'Micrometer Screw Gauge (Least Count 0.01 mm)',
+      '1.5V DC Power Source with Plug Key',
     ],
   },
 ];
@@ -134,7 +138,12 @@ export const labsRegistry: LabMeta[] = [
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
 export function getLabBySlug(slug: string): LabMeta | undefined {
-  return labsRegistry.find((lab) => lab.slug === slug);
+  return labsRegistry.find(
+    (lab) =>
+      lab.slug === slug ||
+      (slug === 'carey-foster-bridge' && lab.slug === 'carey-foster') ||
+      (slug === 'carey-foster' && lab.slug === 'carey-foster-bridge')
+  );
 }
 
 export function getLabsByYear(year: number): LabMeta[] {

@@ -8,6 +8,7 @@ import { StefansLawLab } from './labs/sem1/stefans-law';
 import { FourProbeLab } from './labs/sem1/four-probe';
 import { HallEffectLab } from './labs/sem1/hall-effect';
 import { DiffractionGratingLab } from './labs/sem1/diffraction-grating';
+import { CareyFosterLab } from './labs/sem1/carey-foster';
 import { getLabBySlug } from './data/labsRegistry';
 
 // ─── Lab route: dispatches to the correct experiment component ─────────────────
@@ -23,6 +24,7 @@ function LabRoute() {
   if (slug === 'four-probe') return <FourProbeLab />;
   if (slug === 'hall-effect') return <HallEffectLab />;
   if (slug === 'diffraction-grating') return <DiffractionGratingLab />;
+  if (slug === 'carey-foster' || slug === 'carey-foster-bridge') return <CareyFosterLab />;
 
   // All other experiments are coming-soon
   return <ComingSoonPage slug={slug} />;
